@@ -73,6 +73,9 @@ public class Player extends ActiveAgent implements Serializable {
 		return lives; 
 	}
 
+	/**
+	 * When saving a state, it's necessary to make a copy of the object.
+	 */
     @Override
     public GameObject makeCopy()
     {
@@ -85,6 +88,9 @@ public class Player extends ActiveAgent implements Serializable {
         return copy;
     }
 	
+    /**
+     * The previously saved states has to be loaded back into the object. 
+     */
     @Override
     public void reinstate(GameObject entity)
     {

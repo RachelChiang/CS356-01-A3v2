@@ -23,18 +23,12 @@
  * menus and interaction with the operator.
  */
 
-
-import java.io.Serializable;
-
 /**
  * This abstract class represents the active entities of the game.
  * It is used by the Enemy and Player classes. Its purposes are in
  * position settings and movement.
- * 
- * @author Pink Panthers
- *
  */
-public abstract class ActiveAgent implements Serializable, GameObject {
+public abstract class ActiveAgent implements GameObject {
 	
 	/**
 	 * This field represents the position in the row of the object, which

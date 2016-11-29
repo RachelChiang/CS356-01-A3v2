@@ -24,7 +24,6 @@
  */
 
 
-import java.io.Serializable;
 import java.util.Random;
 
 /**
@@ -35,7 +34,7 @@ import java.util.Random;
  * @author PinkPanthers
  *
  */
-public class Briefcase implements Serializable {
+public class Briefcase {
 	Random rand = new Random();
 	
 	/**

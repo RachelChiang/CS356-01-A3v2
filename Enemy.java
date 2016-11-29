@@ -277,7 +277,7 @@ public class Enemy extends ActiveAgent implements Serializable {
 	public int getSpawnCol() {
 		return spawnCol;
 	}
-
+	
     @Override
     public GameObject makeCopy()
     {

@@ -25,14 +25,11 @@ import java.util.ArrayList;
  * menus and interaction with the operator.
  */
 
-
 /**
  * This class runs the game. It calls the ActiveAgent, Briefcase, Enemy,
  * Map, Player, PowerUp, and UserInterface classes to successfully
  * run the game. It represents the communication among all of these classes
  * to fulfill the {@link #setUp()} and {@link #turn()}.
- * 
- * @author Pink Panthers
  *
  */
 public class GameEngine implements Originator {
@@ -48,7 +45,6 @@ public class GameEngine implements Originator {
 	private Briefcase brief = new Briefcase();
 	
 	private Caretaker caretaker;
-//	private Originator originator;
 	
 	/**
 	 * This field may not have been necessary; however, it improved ease of use, especially
@@ -122,7 +118,6 @@ public class GameEngine implements Originator {
 	 */
 	private void createNewGame() {
 	    caretaker = new Caretaker();
-	//    originator = new Originator();
 	    
 		hardMode = ui.setDifficulty();
 		turnNumber = 0;
@@ -583,6 +578,9 @@ public class GameEngine implements Originator {
         turnNumber = turns;
     }
     
+    /**
+     * Saving Memento: First, the objects must be copied.
+     */
     public GameEngine copyEntities()
     {
         Enemy[] ninjaCopies = new Enemy[theNinja.length];
@@ -594,12 +592,20 @@ public class GameEngine implements Originator {
                 ninjaCopies, theMap.makeCopy(), turnNumber);
     }
     
+    /**
+     * Saving Memento: Second, the Memento is created. 
+     */
     @Override
     public Memento saveToMemento()
     {
         return new Memento(copyEntities());
     }
     
+    /**
+     * Restoring Memento: The Originator is meant to understand how exactly to
+     * handle the rollback. This one simply calls on each saved object to
+     * reinstate itself.
+     */
     @Override
     public void restoreFromMemento(Memento m)
     {
@@ -609,11 +615,6 @@ public class GameEngine implements Originator {
         {
             theNinja[i].reinstate(entities.get(i + 1));
         }
-  /*      theSpy = (Player) entities.get(0);
-        for (int i = 1; i < theNinja.length + 1; ++i)
-        {
-            theNinja[i - 1] = (Enemy) entities.get(i);
-        }*/
         theMap.reinstate(entities.get(7));
         turnNumber = m.getTurnNumber();
     }
