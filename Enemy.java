@@ -21,13 +21,6 @@
  * the player's lives as well as the ammo. The PowerUp class contains the
  * invincibility, radar, and ammo. Lastly, the UserInterface contains all
  * menus and interaction with the operator.
- * 
- * Pink Panthers
- * Dominique Acuna
- * Rachel Chiang (Captain)
- * Danyel Gil
- * Seongmin Kim
- * Kartik Soni
  */
 
 
@@ -38,8 +31,6 @@ import java.util.*;
  * This class represents the enemies, the ninjas, who attempt to kill the user, and follow the user
  * if the game is being played in hard mode. It extends the abstract class ActiveAgent. The enemy
  * may be killed as well, by the user with a bullet.
- * 
- * @author Pink Panthers
  *
  */
 

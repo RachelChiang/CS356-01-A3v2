@@ -23,13 +23,6 @@ import java.util.ArrayList;
  * the player's lives as well as the ammo. The PowerUp class contains the
  * invincibility, radar, and ammo. Lastly, the UserInterface contains all
  * menus and interaction with the operator.
- * 
- * Pink Panthers
- * Dominique Acuna
- * Rachel Chiang (Captain)
- * Danyel Gil
- * Seongmin Kim
- * Kartik Soni
  */
 
 
